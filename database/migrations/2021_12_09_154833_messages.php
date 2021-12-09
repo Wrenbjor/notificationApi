@@ -30,12 +30,12 @@ class Messages extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id('message_id');
-            $table->integer('user_id_to');
-            $table->integer('user_id_from');
+            $table->biginteger('user_id_to');
+            $table->biginteger('user_id_from');
             $table->string('message_body');
             $table->timestamps();
-            $table->foreign('user_id_to')->references('users')->on('user_id');
-            $table->foreign('fk_user_from')->references('users')->on('user_id');
+            $table->foreign('user_id_to')->references('user_id')->on('users');
+            $table->foreign('user_id_from')->references('user_id')->on('users');
         });
     }
 
