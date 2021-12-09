@@ -34,9 +34,6 @@ class Messages extends Migration
             $table->integer('user_id_from');
             $table->string('message_body');
             $table->timestamps();
-
-            $table->primary('message_id');
-
             $table->foreign('user_id_to')->references('users')->on('user_id');
             $table->foreign('fk_user_from')->references('users')->on('user_id');
         });

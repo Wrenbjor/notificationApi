@@ -29,9 +29,6 @@ class Notifications extends Migration
             $table->boolean('notification_is_read');
             $table->integer('notification_message_id');
             $table->timestamps();
-
-            $table->primary('notification_id');
-
             $table->foreign('notification_message_id')->references('message_id')->on('messages');
         });
     }
